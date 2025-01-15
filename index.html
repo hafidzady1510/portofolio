@@ -36,9 +36,15 @@
     <section id="portfolio">
         <h2>Portofolio</h2>
         <div class="gallery">
-            <div class="item"><img src="images/GMAX.png" alt="Desain 1"></div>
-            <div class="item"><img src="images/GMAX-filosofi.png" alt="Desain 2"></div>
-            <div class="item"><img src="images/GMAX-warna.png" alt="Desain 3"></div>
+            <div class="item">
+                <img src="images/GMAX.png" alt="Desain 1" onclick="openModal('images/GMAX.png')">
+            </div>
+            <div class="item">
+                <img src="images/GMAX-filosofi.png" alt="Desain 2" onclick="openModal('images/GMAX-filosofi.png')">
+            </div>
+            <div class="item">
+                <img src="images/GMAX-warna.png" alt="Desain 3" onclick="openModal('images/GMAX-warna.png')">
+            </div>
         </div>
     </section>
 
@@ -60,5 +66,32 @@
     <footer>
         <p>&copy; 2025 Portofolio Desain Saya</p>
     </footer>
+
+    <!-- Modal untuk menampilkan gambar lebih besar -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+// Fungsi untuk membuka modal
+<script>
+    function openModal(imageSrc) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var captionText = document.getElementById("caption");
+
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+        captionText.innerHTML = imageSrc.split('/').pop(); // Menampilkan nama gambar di caption
+    }
+
+    // Fungsi untuk menutup modal
+    function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+    }
+</script>
 </html>
