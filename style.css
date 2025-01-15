@@ -83,35 +83,40 @@ footer {
     padding-top: 60px;
 }
 
-/* Gambar dalam modal */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-/* Caption text */
-#caption {
+/* Style untuk Pop-up */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Stay on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Background gelap */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    color: white;
-    padding: 10px;
-    font-size: 18px;
 }
 
-/* Close button */
-.close {
+/* Gambar dalam pop-up */
+#popup-image {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+/* Tombol close di pop-up */
+.close-popup {
     position: absolute;
-    top: 15px;
-    right: 35px;
+    top: 10px;
+    right: 20px;
     color: white;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close-popup:hover,
+.close-popup:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
